@@ -1,0 +1,19 @@
+#!/bin/sh
+
+scriptDir=$(readlink -f $(dirname "$0"))
+
+jar1="$scriptDir/target/scala-2.11/exi-utils-assembly-1.1.jar"
+if [ -f "$jar1" ]
+then
+  jar="$jar1"
+else
+  jar="$scriptDir/bin/exi-utils-1.1.jar"
+fi
+
+#echo "Using $jar1"
+#ls -laFg $jar
+#echo ""
+
+#echo "$*"
+java -jar $jar1 $*
+
